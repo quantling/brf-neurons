@@ -73,8 +73,8 @@ def brf_update(
     v = v + omega * u * dt + b * v * dt
 
     # # generate spike
-    # z = functional.FGI_DGaussian(u_ - theta - q)
-    z = functional.StepDoubleGaussianGrad.apply(u_ - theta - q)
+    # z = functional.StepDoubleGaussianGrad.apply(u_ - theta - q)
+    z = functional.FGI_DGaussian(u_ - theta - q)
 
     q = q.mul(0.9) + z
 
